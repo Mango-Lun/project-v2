@@ -11,10 +11,8 @@
       <el-form-item label="姓名">
         <el-input v-model="formInline.name" placeholder="请输入姓名"></el-input>
       </el-form-item>
-      <el-form-item label="活动区域">
-        <el-button type="primary" @click="search" @keyup="enter"
-          >查询</el-button
-        >
+      <el-form-item>
+        <el-button type="primary" @click="search">查询</el-button>
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="reset">重置</el-button>
@@ -22,7 +20,7 @@
     </el-form>
     <!-- 分页逻辑：slice（（当前页-1）*每页条数，当前页*每页条数） -->
     <el-table :data="computedStudentList" border style="width: 100%">
-      <el-table-column prop="id" label="id" align="center"> </el-table-column>
+      <!-- <el-table-column prop="id" label="id" align="center"> </el-table-column> -->
       <el-table-column prop="name" label="姓名" align="center">
       </el-table-column>
       <el-table-column prop="age" label="年龄" align="center">
@@ -49,6 +47,7 @@
         </div>
       </el-table-column>
     </el-table>
+    <!-- 分页导航 -->
     <el-pagination
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
@@ -95,7 +94,7 @@ export default {
     // 获取学生列表
     getStudentsList(params) {
       students(params).then((res) => {
-        console.log(res)
+        // console.log(res)
         if (res.data.status === 200) {
           this.total = res.data.total
           this.students = res.data.data

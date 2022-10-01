@@ -50,24 +50,24 @@ export default new Router({
           iconClass: 'fa fa-user',
           component: () => import('../components/students/InfoList'),
         },
-        {
-          path: '/home/infos',
-          name: '信息管理',
-          iconClass: 'fa fa-user',
-          component: () => import('../components/students/InfoLists'),
-        },
+        // {
+        //   path: '/home/infos',
+        //   name: '信息管理',
+        //   iconClass: 'fa fa-user',
+        //   component: () => import('../components/students/InfoLists'),
+        // },
         {
           path: '/home/work',
           name: '作业列表',
           iconClass: 'fa fa-user',
           component: () => import('../components/students/WorkList'),
         },
-        {
-          path: '/home/works',
-          name: '作业管理',
-          iconClass: 'fa fa-user',
-          component: () => import('../components/students/WorkMent'),
-        },
+        // {
+        //   path: '/home/works',
+        //   name: '作业管理',
+        //   iconClass: 'fa fa-user',
+        //   component: () => import('../components/students/WorkMent'),
+        // },
       ],
     },
     // 数据统计
